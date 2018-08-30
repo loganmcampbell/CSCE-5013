@@ -1,8 +1,8 @@
 # puts "enter in the number between 1 and 25 for ciphertext : "
 # number = gets
 number = 3
-puts "shift number  = " + number.to_s
-puts "enter the plaintext : "
+puts "KEY (NUMBER) = " + number.to_s
+# puts "enter the plaintext : "
 plaintext = ""
 # plaintext = gets
 plaintext = "COMPUTER"
@@ -37,10 +37,10 @@ codeword.each_index do |z|
    cipher << alphabet[shiftalpha.index(iterate[z])]
 end
 
-p shiftalpha
-p alphabet
-p iterate
-p codeword
+# p shiftalpha
+# p alphabet
+# p iterate
+# p codeword
 p cipher
 
 # puts "Press RETURN when you're done."

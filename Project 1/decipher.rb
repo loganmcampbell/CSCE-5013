@@ -26,15 +26,15 @@ alphabet.each_index do |i|
     shift = shift + 1
 end
 puts "NUMBER KEY [" + number.to_s + "] "
-p shiftalpha = shiftalpha.compact
-p alphabet
-p iterate = ciphertext.split('')
+shiftalpha = shiftalpha.compact
+# p alphabet
+iterate = ciphertext.split('')
 codeword = []
 original = []
 iterate.each_index do |x|
   codeword << alphabet.index(iterate[x])
 end
-p codeword
+# p codeword
 codeword.each_index do |z|
     original << shiftalpha[alphabet.index(iterate[z])]
 end
