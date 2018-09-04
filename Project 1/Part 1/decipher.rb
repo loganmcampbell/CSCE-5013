@@ -1,12 +1,20 @@
 # Get KEY NUMBER (N):
+puts "Get Key Number (N) : "
 
-# gets number
-number = 3
 
+number = gets.to_i
+
+
+# number = 3
 # GET CIPHERTEXT
-# ciphertext = ""
-#gets ciphertext
-ciphertext = "VHQGQXGHV"
+puts "Get Ciphertext : "
+ciphertext = ""
+
+
+ciphertext = gets.chomp
+
+
+# ciphertext = "VHQGQXGHV"
 
 
 ciphertext = ciphertext.upcase
@@ -40,3 +48,6 @@ codeword.each_index do |z|
 end
 
 p original
+
+puts "Press RETURN when you're done"
+gets

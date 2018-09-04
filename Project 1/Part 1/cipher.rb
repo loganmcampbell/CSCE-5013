@@ -1,11 +1,19 @@
-# puts "enter in the number between 1 and 25 for ciphertext : "
-# number = gets
-number = 3
+puts "enter in the number between 1 and 25 for ciphertext : "
+
+
+number = gets.to_i
+
+
+# number = 3
 puts "KEY (NUMBER) = " + number.to_s
-# puts "enter the plaintext : "
+puts "Enter the plaintext : "
 plaintext = ""
-# plaintext = gets
-plaintext = "COMPUTER"
+
+
+plaintext = gets.chomp
+
+
+# plaintext = "COMPUTER"
 plaintext = plaintext.upcase
 puts 'PLAINTEXT = ' + plaintext.upcase
 
@@ -43,5 +51,5 @@ end
 # p codeword
 p cipher
 
-# puts "Press RETURN when you're done."
-# gets
+puts "Press RETURN when you're done."
+gets
