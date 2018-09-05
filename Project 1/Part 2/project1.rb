@@ -5,8 +5,10 @@ load 'decipherfunction.rb'
 
 file = 'sample.txt'
 dictionary = dictionary(file)
-ciphertext = "jo dpnqvufs xpsme"
-ciphertext = ciphertext.upcase.split(" ")
+print "Enter ciphertext : "
+# ciphertext = gets.chomp
+ciphertext = "LOGAN CAMPBELL"
+ciphertext = ciphertext.upcase
 found = []
 for cipherword in ciphertext
     for word in dictionary
@@ -19,3 +21,5 @@ end
 
 p "[ MESSAGE , KEY ]"
 p found
+puts "Press RETURN when you're done."
+gets

@@ -1,24 +1,11 @@
-# Get KEY NUMBER (N):
-puts "Get Key Number (N) : "
-
-
+puts "Enter in the number between 1 and 25 for ciphertext : "
 number = gets.to_i
-
-
-# number = 3
-# GET CIPHERTEXT
-puts "Get Ciphertext : "
+puts "KEY (NUMBER) = " + number.to_s
+puts "Enter the ciphertext : "
 ciphertext = ""
-
-
 ciphertext = gets.chomp
-
-
-# ciphertext = "VHQGQXGHV"
-
-
 ciphertext = ciphertext.upcase
-puts 'CIPHERTEXT = ' + ciphertext.upcase
+print "CIPHErTEXT = #{ciphertext}"
 
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 alphabet = alphabet.chars.to_a
@@ -35,19 +22,21 @@ alphabet.each_index do |i|
 end
 puts "NUMBER KEY [" + number.to_s + "] "
 shiftalpha = shiftalpha.compact
-# p alphabet
 iterate = ciphertext.split('')
 codeword = []
 original = []
 iterate.each_index do |x|
   codeword << alphabet.index(iterate[x])
 end
-# p codeword
+
 codeword.each_index do |z|
+    if (codeword[z] == nil)
+      original << " "
+    else
     original << shiftalpha[alphabet.index(iterate[z])]
+  end
 end
 
 p original
-
 puts "Press RETURN when you're done"
 gets

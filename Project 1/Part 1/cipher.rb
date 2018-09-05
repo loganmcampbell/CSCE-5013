@@ -1,21 +1,10 @@
-puts "enter in the number between 1 and 25 for ciphertext : "
-
-
+puts "Enter in the number between 1 and 25 for ciphertext : "
 number = gets.to_i
-
-
-# number = 3
 puts "KEY (NUMBER) = " + number.to_s
-puts "Enter the plaintext : "
+print "Enter the plaintext : "
 plaintext = ""
-
-
 plaintext = gets.chomp
-
-
-# plaintext = "COMPUTER"
-plaintext = plaintext.upcase
-puts 'PLAINTEXT = ' + plaintext.upcase
+puts "PLAINTEXT = #{plaintext}"
 
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 alphabet = alphabet.chars.to_a
@@ -40,16 +29,17 @@ cipher = []
 iterate.each_index do |x|
   codeword << alphabet.index(iterate[x])
 end
-
 codeword.each_index do |z|
-   cipher << alphabet[shiftalpha.index(iterate[z])]
+  if (codeword[z] == nil)
+    cipher << " "
+  else
+  cipher << alphabet[shiftalpha.index(iterate[z])]
 end
-
+end
 # p shiftalpha
 # p alphabet
 # p iterate
 # p codeword
 p cipher
-
 puts "Press RETURN when you're done."
 gets
