@@ -88,14 +88,14 @@ print(treeroot)
 puts("\n================================================================")
 puts()
 puts("Enter the message number to extend signature: ")
-#choice = Integer(gets.chomp)
-choice = 1
+choice = Integer(gets.chomp)
+# choice = 1
 while (choice < 1 || choice > 8)
   puts("Enter a valid number:  ")
   choice = Integer(gets.chomp)
 end
-puts(choice)
-
+print(choice)
+puts()
 File.open('sig.txt', 'w') do |f1|
   f1.print(hashes[choice])
 end
@@ -107,7 +107,7 @@ end
 puts("#{messages[choice]} : #{hashes[choice]}")
 
 puts("PRESS ENTER TO CONTINUE OR EDIT SIGNATURE")
-# gets()
+gets()
 sig = ""
 File.open('sig.txt', 'r') do |f1|
   while line = f1.gets
@@ -118,7 +118,7 @@ hashes[choice] = sig
 
 
 puts("PRESS ENTER TO CONTINUE OR EDIT MESSAGE")
-# gets()
+gets()
 msg = ""
 File.open('msg.txt', 'r') do |f1|
   while line = f1.gets
@@ -133,6 +133,7 @@ treecombine   = Array.new()
 for x in 1..limit
   treecontainer[x] = signit(messages[x],key)
 end
+treecontainer[choice] = sig
 
 treecombine[1] = signit(treecontainer[1] + treecontainer[2], key)
 treecombine[2] = signit(treecontainer[3] + treecontainer[4], key)
@@ -142,13 +143,24 @@ treecombine[5] = signit(treecombine[1] + treecombine[2], key)
 treecombine[6] = signit(treecombine[3] + treecombine[4], key)
 treecombine[7] = signit(treecombine[5] + treecombine[6], key)
 
-
-
+puts("----------------------------------------------------------------")
+puts("-------------------- M E R K L E T R E E -----------------------")
+puts("--------------------  O R I G I N I A L  -----------------------")
+puts("----------------------------------------------------------------")
 puts(phashes)
 puts()
+puts("----------------------------------------------------------------")
+puts("-------------------- M E R K L E T R E E -----------------------")
+puts("------------------  R E G E N E R A T E D  ---------------------")
+puts("----------------------------------------------------------------")
 puts(treecombine)
+puts()
+
+if (treecombine[7] == phashes[7])
+  puts("VERIFICATION: TRUE")
+else
+  puts("VERIFICATION: FALSE")
+end
 
 
-
-
-# gets()
+gets()
